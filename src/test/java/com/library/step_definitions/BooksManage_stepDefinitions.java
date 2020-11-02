@@ -62,4 +62,15 @@ public class BooksManage_stepDefinitions {
 
 
 
+
+    @Given("user select view {int} records per page")
+    public void user_select_view_records_per_page(Integer int1) {
+        booksManagePage.select_recordsPerPage(int1);
+    }
+    @Then("only {int} records are displayed on page")
+    public void only_records_are_displayed_on_page(int int1) {
+        Assert.assertEquals(int1,booksManagePage.verify_recordOfPage().size());
+    }
+
+
 }

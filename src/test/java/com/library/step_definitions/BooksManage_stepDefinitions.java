@@ -41,4 +41,25 @@ public class BooksManage_stepDefinitions {
 
 
 
+    //romans changes
+    @When("I click column {string}")
+    public void i_click_column(String string) {
+        booksManagePage.clickOnHeaderElement(string);
+    }
+
+
+    //romans changes
+    @Then("records should be sorted in {string} order by column {string}")
+    public void records_should_be_sorted_in_order_by_column(String string, String string2) {
+        String actualSortOrder = booksManagePage.currentSortedOrderOfHeaderElement(string2);
+        String expectedOrder = string;
+        Assert.assertEquals(expectedOrder,actualSortOrder);
+    }
+
+
+
+
+
+
+
 }

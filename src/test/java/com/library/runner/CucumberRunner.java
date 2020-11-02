@@ -6,10 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = "src/test/java/resources/features",
         glue = "com/library/step_definitions",
         dryRun = false,
-        tags = ""
+        tags = " @AC4"
 )
 public class CucumberRunner {
 }

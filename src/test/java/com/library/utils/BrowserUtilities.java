@@ -33,6 +33,11 @@ public class BrowserUtilities {
         ((JavascriptExecutor)(Driver.getDriver())).executeScript("arguments[0].click()",element);
     }
 
+    public static void waitUntilElementIsVisible(WebElement webElement){
+        wait.until(ExpectedConditions.visibilityOf(webElement));
+
+    }
+
     public static void waitEnterTextWhenVisible(WebElement element, String text){
         wait.until(ExpectedConditions.visibilityOf(element));
         element.clear();
@@ -119,4 +124,10 @@ public class BrowserUtilities {
             }
         }
     }
+
+
+
+
+
+
 }

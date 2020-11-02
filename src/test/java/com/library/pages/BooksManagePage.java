@@ -124,4 +124,53 @@ public class BooksManagePage {
        wait.until(ExpectedConditions.visibilityOf(formHeader));
         return addBookForm.isDisplayed();
     }
+
+    /**
+     *roman
+     * @param string
+     * @return
+     */
+    public WebElement findHeaderElement(String string){
+        String headerElementXpath = "//th[contains(@aria-label, '"+string+"')]";
+        WebElement webElement  = Driver.getDriver().findElement(By.xpath(headerElementXpath));
+        return webElement;
+    }
+
+    /**
+     *roman
+     * @param string ISBM,
+     */
+    public void clickOnHeaderElement(String string){
+        String headerElementXpath = "//th[contains(@aria-label, '"+ string + "')]";
+        WebElement element=Driver.getDriver().findElement(By.xpath(headerElementXpath));
+        BrowserUtilities.waitClickOnElement(element);
+    }
+
+    /**
+     *roman
+     * @param string ISBM,
+     */
+
+    public String currentSortedOrderOfHeaderElement(String string) {
+        String currentSortOrder = "";
+        BrowserUtilities.waitUntilElementIsVisible(findHeaderElement(string));
+        String strFromAttribute = findHeaderElement(string).getAttribute("aria-label");
+        if (strFromAttribute.contains("ascending")) {
+            return currentSortOrder = "descending";
+        } else {
+            return currentSortOrder = "ascending";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

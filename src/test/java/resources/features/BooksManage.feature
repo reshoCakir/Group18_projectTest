@@ -17,6 +17,14 @@ Feature:  As an authorized user, I should able to access Books  page and and man
     When user click "Add Book" button
     Then The "Add Book" form is displayed
 
+
+  @AC4
+  Scenario: User should be able to sort records on the page
+    Given I am at the Books Management page
+    When I click column "ISBN"
+    Then records should be sorted in "ascending" order by column "ISBN"
+
+
   @AC5
   Scenario: User should be change number of displayed records on the page
     Given I am at the Books Management page

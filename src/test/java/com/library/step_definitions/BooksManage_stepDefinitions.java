@@ -20,6 +20,18 @@ public class BooksManage_stepDefinitions {
         booksManagePage.clickBooksTab();
     }
 
+    @Then("user select {string} from Book Category")
+    public void user_select_from_book_category(String string) {
+        booksManagePage.select_bookCategories(string);
+    }
+
+    @Then("The table should display only {string} books")
+    public void the_table_should_display_only_books(String string) {
+        for (String each:booksManagePage.verify_categoryList()) {
+            Assert.assertEquals(string, each);
+        }
+    }
+
     @When("user select  page number")
     public void user_select_page_number() {
         booksManagePage.clickPage(5);
@@ -34,19 +46,17 @@ public class BooksManage_stepDefinitions {
     public void userClickButton(String button) {
         booksManagePage.click_blueButtons(button);
     }
+
     @Then("The {string} form is displayed")
     public void the_form_is_displayed(String formName) {
         Assert.assertTrue(booksManagePage.verify_fromDisplay(formName));
     }
-
-
 
     //romans changes
     @When("I click column {string}")
     public void i_click_column(String string) {
         booksManagePage.clickOnHeaderElement(string);
     }
-
 
     //romans changes
     @Then("records should be sorted in {string} order by column {string}")
@@ -56,17 +66,11 @@ public class BooksManage_stepDefinitions {
         Assert.assertEquals(expectedOrder,actualSortOrder);
     }
 
-
-
-
-
-
-
-
     @Given("user select view {int} records per page")
     public void user_select_view_records_per_page(Integer int1) {
         booksManagePage.select_recordsPerPage(int1);
     }
+
     @Then("only {int} records are displayed on page")
     public void only_records_are_displayed_on_page(int int1) {
         Assert.assertEquals(int1,booksManagePage.verify_recordOfPage().size());

@@ -51,8 +51,9 @@ public class BooksManagePage {
     private WebElement formHeader;
 
     public void click_blueButtons(String blueButtonsName){
-        WebElement element = Driver.getDriver().findElement(By.xpath("//a[contains(text(),' "+blueButtonsName+"')]"));
-        BrowserUtilities.waitClickOnElement(element);
+         WebElement element = Driver.getDriver().findElement(By.xpath("//a[contains(text(),' "+blueButtonsName+"')]"));
+        element.click();
+        //BrowserUtilities.waitClickOnElement(element);
     }
 
     public void click_addBook(){

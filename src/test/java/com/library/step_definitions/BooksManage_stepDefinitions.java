@@ -30,6 +30,15 @@ public class BooksManage_stepDefinitions {
         Assert.assertTrue(booksManagePage.page5Verify());
     }
 
+    @When("user click {string} button")
+    public void userClickButton(String button) {
+        booksManagePage.click_blueButtons(button);
+    }
+    @Then("The {string} form is displayed")
+    public void the_form_is_displayed(String formName) {
+        Assert.assertTrue(booksManagePage.verify_fromDisplay(formName));
+    }
+
 
 
 }

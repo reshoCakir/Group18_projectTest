@@ -162,16 +162,4 @@ public class BooksManagePage {
             return currentSortOrder = "ascending";
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 }

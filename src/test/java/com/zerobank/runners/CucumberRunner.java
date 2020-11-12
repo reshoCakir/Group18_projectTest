@@ -11,10 +11,10 @@ import org.junit.runner.RunWith;
                  "rerun:target/rerun.txt"
                   },
          publish = true,
-         features = "src/test/resources/features",
-         glue = "src/stepDefinitions",
-         tags = "@try",
-         dryRun = false
+         features = "src/test/resources/features/zerobank",
+         glue = "com/zerobank/stepDefinitions",
+         tags = " @savings",
+         dryRun = true
                  )
 
  public class CucumberRunner {

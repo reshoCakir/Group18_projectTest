@@ -45,7 +45,7 @@ public class AccountActivityPage extends BasePage{
 
         public void accountTypes(String btnName){
            WebElement btn = Driver.getDriver().findElement(By.xpath("//a[.='"+btnName+"'] "));
-            wait.until(ExpectedConditions.elementToBeClickable(savingsButton)).click();
+            wait.until(ExpectedConditions.elementToBeClickable(btn)).click();
             System.out.println("clicking on "+btnName);
 
         }

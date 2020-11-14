@@ -1,4 +1,6 @@
 Feature: Add new payee under pay bills
+
+  @add_a_new_payee
   Scenario: Add a new payee
     Given Add New Payee tab
     And creates new payee using following information

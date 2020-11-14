@@ -17,8 +17,20 @@ public abstract class BasePage {
     @FindBy(id = "account_activity_tab")
     private WebElement topTab_accountActivityTab;
 
+    @FindBy(id = "pay_bills_tab")
+    private WebElement topTab_PayBillsTab;
+
+
     public void click_topTab_accountActivityTab(){
         Browser.waitElementToBeClickableAndClick(topTab_accountActivityTab);
     }
+
+    public void click_topTab_PayBillsTab(){
+        Browser.waitElementToBeClickableAndClick(topTab_PayBillsTab);
+    }
+
+
+
+
 
 }

@@ -11,7 +11,6 @@ public class CommitStepDefinitions {
 
     @Given("the user is logged in")
     public void the_user_is_logged_in() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("onlineBankURL"));
         loginPage.login();
         System.out.println(Driver.getDriver().getTitle());
         Assert.assertEquals(Driver.getDriver().getTitle(),"Zero - Account Summary");

@@ -40,6 +40,17 @@ public class Browser {
         System.out.println("Entering text: " + text);
     }
 
+    public static void enterTextWhenVisible(WebElement element, String text) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+        element.clear();
+        element.sendKeys(text);
+        System.out.println("Entering text: " + text);
+    }
+
+    public static void elementIsVisible(WebElement element) {
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
     public static void scrollToJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
@@ -49,5 +60,7 @@ public class Browser {
         actions.moveToElement(element);
         actions.perform();
     }
+
+
 
 }

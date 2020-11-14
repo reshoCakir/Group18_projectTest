@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
                   },
          publish = true,
          features = "src/test/resources/features",
-         glue = "src/stepDefinitions",
-         tags = "@try",
+         glue = "com/zerobank/stepDefinitions",
+         tags = "@add_a_new_payee",
          dryRun = false
                  )
 

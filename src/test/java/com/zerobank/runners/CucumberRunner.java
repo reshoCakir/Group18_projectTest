@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
          publish = true,
          features = "src/test/resources/features",
          glue = "com/zerobank/stepDefinitions",
-         tags = "@add_a_new_payee",
+         tags = "",
          dryRun = false
                  )
 
